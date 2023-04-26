@@ -1,7 +1,3 @@
-// Variables
-var score = 0;
-var questionIndex = 0;
-
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#startTime");
 var questionsDiv = document.querySelector("#questionsDiv");
@@ -12,20 +8,22 @@ var holdInterval = 0;
 var penalty = 10;
 var ulCreate = document.createElement("ul");
 
-// Questions
+var score = 0;
+var questionIndex = 0;
+
 var questions = [
     {
-        title: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
+        title: "Inside which HTML element do we put the JavaScript",
+        choices: ["javascript", "js", "scripting", "script"],
+        answer: "script"
     },
     {
-        title: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
+        title: "Which built in method combines the next two strings and returns a new string?",
+        choices: ["apend()", "concant()", "attach()", "None of the above."],
+        answer: "concant()"
     },
     {
-        title: "Arrays in Javascript can be used to store ____.",
+        title: "Which of the following function of string object combines the text of two strings and returns a new string?",
         choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
         answer: "all of the above"
     },
@@ -41,6 +39,12 @@ var questions = [
     },
 
 ];
+
+
+var secondsLeft = 76;
+var holdInterval = 0;
+var penalty = 10;
+var ulCreate = document.createElement("ul");
 
 // Code from: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 
@@ -69,7 +73,7 @@ function render(questionIndex) {
         var userChoices = questions[questionIndex].choices;
         questionsDiv.textContent = userQuestion;
     }
-    
+    //Renders choices to the page
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
@@ -78,3 +82,29 @@ function render(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
+
+function compare(event) {
+    var element = event.target;
+
+    if (element.matches("li")) {
+
+        var createDiv = document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+        // if correct
+        if (element.textContent == questions[questionIndex].answer) {
+            score++;
+        } else {
+            //-5 seconds for penalty
+            secondsLeft = secondsLeft - penalty;
+        }
+ }}
+
+ // question index determines question user is on
+
+ if (questionIndex >= questions.length) {
+    allDone();
+    createDiv.textContent = "End of quiz!" + "Your score was " + score + "/" + questions.length + " right!";
+} else {
+    render(questionIndex); 
+    questionsDiv.appendChild(createDiv);
+} 
