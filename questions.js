@@ -187,4 +187,4 @@ createSubmit.addEventListener("click", function () {
     localStorage.setItem("allScores", newScore);
     //gets player back to final page
     window.location.replace(".highscores.html");
-})
+}) 
