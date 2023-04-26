@@ -137,3 +137,54 @@ function allDone() {
         questionsDiv.appendChild(createP2);
     }
 }
+
+// initials label
+var createLabel = document.createElement("label");
+createLabel.setAttribute("id", "createLabel");
+createLabel.textContent = "Enter your initals!";
+
+questionsDiv.appendChild(createLabel);
+
+var createInput = document.createElement("input");
+createInput.setAttribute("type", "text");
+createInput.setAttribute("id", "initals");
+createInput.textContent = "";
+
+questionsDiv.appendChild(createInput);
+
+//enter name
+
+var createSubmit = document.createElement("button");
+createSubmit.setAttribute("type", "submit");
+createSubmit.setAttribute("id", "submit");
+createSubmit.textContent = "submit";
+
+questionsDiv.appendChild(createSubmit);
+
+//event listener to get initals/local storage to save to web
+
+createSubmit.addEventListener("click", function () {
+    var initals = createInput.value;
+
+    if (initals === null) {
+        console.log("There wasn't anything entered!");
+    } else {
+        var finalScore = {
+            initals: initals,
+            score: timeRemaining
+        }
+        //if there's no value
+    } console.log(finalScore); 
+    var allScores = localStorage.getItem("allScores");
+    if (allScores === null) {
+        allScores = [];
+        //what to do with value
+    } else {
+        allScores = JSON.parse(allScores);
+    }
+    allScores.push(finalScore);
+    var newScore = JSON.stringify(allScores);
+    localStorage.setItem("allScores", newScore);
+    //gets player back to final page
+    window.location.replace(".highscores.html");
+})
