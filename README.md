@@ -2,6 +2,8 @@
 
 #### By _*Kylie Fox*_ 
 
+
+
 ## Technologies Used
 
 * _HTML_
@@ -35,15 +37,15 @@ and put our skills to the test to make a fun game with a timer and highscore boa
 
 ## Setup/Installation Requirements
 
-* Go to [insert link to github repo here] and copy SSH 
+* Go to git@github.com:kmfox1087/API-CODE-QUIZ-CHALLENGE-4.git and copy SSH 
 * Use _git clone_ in your terminal and copy and paste the SSH code to your local computer
 * Use _git status_ to make sure you are in the repo, if not use _cd Bootcamp-Challenge-3_ in your terminal to change into your local repo
 * After clone is complete, type _code ._ into your terminal to edit files as needed
 
 ## Contributions
 
-* 
+* Kylie Fox
 
 ## License
 
-Copyright (c) _4/10/23_ _Kylie Fox_
+Copyright (c) _4/20/23_ _Kylie Fox_
