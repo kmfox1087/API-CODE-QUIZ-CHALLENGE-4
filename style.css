@@ -11,7 +11,7 @@
     margin-left: 33%;
     padding: 15px 32px;
     font-size: 20px;
-    color: white;
+    color: rgb(44, 41, 41);
 }
 #questionsDiv {
     margin: 20px;
@@ -34,5 +34,66 @@
     text-decoration: none;
 }
 
+#clear {
+    background-color: blue;
+    position: relative;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    top: 30%;
+    right: 5%;
+    text-align: center;
+}
 
+button {
+    border-radius: 8px;
+}
 
+textarea {
+    width: 90%;
+    margin: 20px;
+}
+
+#Submit {
+    background-color: blue;
+    margin-left: 33%;
+    padding: 15px 32px;
+    font-size: 20px;
+    color: white;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input {
+    margin-bottom: 20px;
+    width: 50%;
+    border: 1px solid gray;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    background-color: blue;
+    margin-top: 10px;
+    padding: 5px 15px;
+    width: 80%;
+    font-size: 18px;
+    color: #fff;
+}
+
+#createDiv {
+    margin-top: 20px;
+    border-top: 1px solid gray;
+}
+
+/*media queries*/
+
+@media screen and (max-width: 768px) {
+    body {
+        max-width: 786px;
+    }
+}
