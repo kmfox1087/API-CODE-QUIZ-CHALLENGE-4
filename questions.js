@@ -64,7 +64,7 @@ timer.addEventListener("click", function () {
     render(questionIndex);
 });
  
-//Displays questions
+//shows questions
 function render(questionIndex) { 
     questionsDiv.innerHTML = "";
     ulCreate.innerHTML = "";
@@ -82,7 +82,7 @@ function render(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
-
+//this compares choices to answer (w/ penalty)
 function compare(event) {
     var element = event.target;
 
@@ -103,8 +103,37 @@ function compare(event) {
 
  if (questionIndex >= questions.length) {
     allDone();
-    createDiv.textContent = "End of quiz!" + "Your score was " + score + "/" + questions.length + " right!";
+    createDiv.textContent = "End of quiz!" + "Your score was " + score + "/" + questions.length;
 } else {
     render(questionIndex); 
     questionsDiv.appendChild(createDiv);
 } 
+
+//this will append the last page
+function allDone() {
+    questionsDiv.innerHTML = "";
+    currentTime.innerHTML = "";
+
+    // heading 
+    var createH1 = document.createElement("h1");
+    createH1.setAttribute("id", "createH1");
+    createH1.textContent = "All Done!"
+
+    questionsDiv.appendChild(createH1);
+
+    // p
+    var createP = document.createElement("p");
+    createP.setAttribute("id", "createP");
+
+    questionsDiv.appendChild(createP);
+
+    // takes time remaining and replaces score
+    if (secondsLeft >= 0) {
+        var timeRemaining = secondsLeft;
+        var createP2 = document.createElement("p");
+        clearInterval(holdInterval);
+        createP.textContent = "Your final score is: " + timeRemaining;
+
+        questionsDiv.appendChild(createP2);
+    }
+}
