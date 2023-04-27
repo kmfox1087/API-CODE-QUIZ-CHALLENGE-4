@@ -2,7 +2,7 @@
 
 #### By _*Kylie Fox*_ 
 
-![_C__Users_kmfox_API-CODE-QUIZ-CHALLENGE-4_index html](https://user-images.githubusercontent.com/128554207/234718196-ef319e72-7d78-4759-b660-49ab35d94047.png)
+![_C__Users_kmfox_API-CODE-QUIZ-CHALLENGE-4_index html (2)](https://user-images.githubusercontent.com/128554207/234998387-e0d4a378-396e-47e5-8845-b2f739df4576.png)
 
 ## Technologies Used
 
